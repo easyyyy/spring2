@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="stuClassId" class="entity.StudentClass">
+        <constructor-arg index="0" value="2016"/>
+        <constructor-arg index="1" value="软件开发"/>
+        <property name="count" value="35"/>
+    </bean>
+    <bean id="stu" class="entity.Student">
+        <constructor-arg index="0" value="2016001"/>
+        <constructor-arg index="1" value="张三"/>
+        <property name="sex" value="男"/>
+        <property name="stuClass" ref="stuClassId"/>
+    </bean>
+    <bean id="stuDaoId" class="dao.impl.StudentDaoImpl">
+
+    </bean>
+
+    <bean id="stuServiceId" class="bll.impl.StudentServiceImpl">
+        <property name="studentDao" ref="stuDaoId"/>
+    </bean>
+</beans>
