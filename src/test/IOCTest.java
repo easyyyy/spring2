@@ -10,7 +10,7 @@ public class IOCTest {
     public void test1(){
         //启动容器
         ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-
+        System.out.println("");
         //获取bean
         Student student = ac.getBean("stu", Student.class);
         //执行
