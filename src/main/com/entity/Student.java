@@ -45,6 +45,6 @@ public class Student {
 
     public void print(){
         System.out.println("该学生信息--学号："+this.id+",姓名："+this.name+",性别："+this.sex+",所属班级："+this.stuClass.getName());
-
+        System.out.println("test");
     }
 }
