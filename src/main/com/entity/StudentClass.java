@@ -1,14 +1,14 @@
 package entity;
 
+import org.springframework.stereotype.Component;
+
+@Component("stuClass")
 public class StudentClass {
     private String id;
     private String name;
     private int count;
 
-    public StudentClass(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+
 
     public String getId() {
         return id;

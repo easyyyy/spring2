@@ -1,15 +1,18 @@
 package entity;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("stu")
 public class Student {
     private String id;
     private String name;
     private String sex;
+    @Autowired
     private StudentClass stuClass;
 
-    public Student(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+
 
     public String getId() {
         return id;
