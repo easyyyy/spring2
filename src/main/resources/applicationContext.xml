@@ -11,6 +11,19 @@
 ">
 
     <context:component-scan base-package="entity"/>
+    <bean id="stuClassId" class="entity.StudentClass"/>
+    <bean id="stuId" class="entity.Student">
+        <property name="id" value="001"/>
+        <property name="stuClass" ref="stuClassId"/>
+    </bean>
+
+    <bean id="myBeanFactoryId" class="BeanFactory.MyBeanFactory" factory-method="createStudent"/>
+
+    <bean id="beanFactoryNoStaticId" class="BeanFactory.BeanFactoryNoStatic"/>
+    <bean id="studentId" factory-bean="beanFactoryNoStaticId" factory-method="createStudent"/>
+
+    <bean id="studentDaoId" class="dao.impl.StudentDaoImpl" init-method="init" destroy-method="destroy" scope="prototype"/>
+
 
 
     <!--<bean id="stuClassId" class="entity.StudentClass">-->

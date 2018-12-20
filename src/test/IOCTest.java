@@ -1,5 +1,7 @@
 import bll.StudentService;
 import bll.impl.StudentServiceImpl;
+import dao.StudentDao;
+import dao.impl.StudentDaoImpl;
 import entity.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -22,5 +24,15 @@ public class IOCTest {
         ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
         StudentService studentService = ac.getBean("stuServiceId", StudentServiceImpl.class);
         studentService.addStudent();
+    }
+
+    @Test
+    public void test3(){
+        //测试生命周期，作用域
+        ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+        StudentDao dao = ac.getBean("studentDaoId", StudentDaoImpl.class);
+        dao.addStudent();
+        StudentDao dao2 = ac.getBean("studentDaoId", StudentDaoImpl.class);
+        dao.addStudent();
     }
 }
