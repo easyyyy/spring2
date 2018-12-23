@@ -35,4 +35,11 @@ public class IOCTest {
         StudentDao dao2 = ac.getBean("studentDaoId", StudentDaoImpl.class);
         dao.addStudent();
     }
+
+    @Test
+    public void aopTest(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+        StudentService studentService = ac.getBean("stuServiceID",StudentService.class);
+        studentService.addStudent();
+    }
 }
